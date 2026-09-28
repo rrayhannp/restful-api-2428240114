@@ -119,10 +119,11 @@ app.post("/events", (req, res) => {
     !kota || 
     kuota === undefined ||
     typeof kuota !== "number"
+    (hargaTiket !== undefined && typeof hargaTiket !== "number")
 ) {
     return res.status(400).json({
       status: "error",
-      message: "namaEvent, tanggal, kota, dan kuota wajib diisi",
+      message: "namaEvent, tanggal, kota, dan kuota wajib diisi dengan tipe data yang sesuai",
       data: null
     });
   }
