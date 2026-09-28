@@ -113,7 +113,13 @@ app.post("/events", (req, res) => {
   } = req.body;
 
   // Validasi field wajib
-  if (!namaEvent || !tanggal || !kota || kuota === undefined) {
+  if (
+    !namaEvent || 
+    !tanggal || 
+    !kota || 
+    kuota === undefined ||
+    typeof kuota !== "number"
+) {
     return res.status(400).json({
       status: "error",
       message: "namaEvent, tanggal, kota, dan kuota wajib diisi",
