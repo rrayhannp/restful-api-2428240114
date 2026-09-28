@@ -43,7 +43,7 @@ let nextId = 4;
 app.get("/", (req, res) => {
   res.status(200).json({
     nama: "Rayhan Primal",
-    npm: "ISI_NPM_ANDA",
+    npm: "2428240114",
     topik: 10,
     resource: "events",
     endpoints: [
